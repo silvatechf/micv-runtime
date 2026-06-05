@@ -1,0 +1,34 @@
+# Logs de errores del sistema e hilos de ejecución
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Variables de entorno perimetrales (¡Nunca subir las reales!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Almacenamiento de dependencias y cachés del motor
+node_modules/
+.jspm/
+.npm/
+.eslintcache
+.parcel-cache
+.cache/
+
+# Configuraciones del IDE de desarrollo local
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Archivos basura y cachés del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
