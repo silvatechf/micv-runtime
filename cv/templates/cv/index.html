@@ -1,0 +1,410 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ profile.cv.personal_info.nombre }} {{ profile.cv.personal_info.apellidos }} | Fullstack Security Engineer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'cv/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="premium-product-layout">
+
+    <div class="canvas-layer">
+        <div class="background-grid"></div>
+        <div class="noise-layer"></div>
+        <div class="aurora-container">
+            <div class="aurora purple"></div>
+            <div class="aurora cyan"></div>
+            <div class="aurora blue"></div>
+        </div>
+    </div>
+
+    <div class="magnetic-dot"></div>
+    <div class="magnetic-ring"></div>
+
+    <nav class="nav-premium">
+        <div class="nav-container-inner">
+            <div class="brand-signature">FERNANDO DA SILVA FELIX<span>.</span></div>
+            
+            <div class="theme-selector-container font-mono me-3 d-none d-md-block">
+                <select id="themeSelect" class="theme-select form-select form-select-sm" style="font-size: 0.85rem; background: transparent; border: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.4);">
+                    <option value="emerald">Glow Esmeralda</option>
+                    <option value="sapphire">Glow Zafiro</option>
+                    <option value="cyberpunk">Glow Neón</option>
+                </select>
+            </div>
+
+            <div class="nav-desktop-links">
+                <a href="#hero" class="nav-target active">// INTERFACE</a>
+                <a href="#architecture" class="nav-target">// ARCHITECTURE</a>
+                <a href="#projects" class="nav-target">// CASES</a>
+                <a href="#dossier" class="nav-target">// DOSSIER</a>
+                <a href="#contact" class="nav-target">// CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container-fluid px-4 px-md-5">
+        
+        <section id="hero" class="d-flex flex-column justify-content-center position-relative">
+            <div class="row w-100">
+                <div class="col-12 text-start">
+                    <div class="hero-signature-label font-mono">FERNANDO DA SILVA FELIX // CV 2026</div>
+                    <h1 class="mega-cinema-title">
+                        BUILDING<br>
+                        SECURE<br>
+                        INTELLIGENCE<span class="emerald-glow-dot">.</span>
+                    </h1>
+                </div>
+            </div>
+            
+            <div class="row w-100 mt-5 pt-4 justify-content-between align-items-end hero-metadata-footer">
+                <div class="col-12 col-md-6 col-lg-5">
+                    <p class="premium-hero-subtitle">
+                        {% if profile.mostrar_perfil_profesional and profile.cv.professional_profile.resumen %}
+                            {{ profile.cv.professional_profile.resumen }}
+                        {% endif %}
+                    </p>
+                    <div class="hero-tags-row font-mono mt-3">
+                        <span>CLOUD ARCHITECTURE</span> • <span>AI SYSTEMS</span> • <span>CYBERSECURITY</span>
+                    </div>
+                </div>
+                <div class="col-12 col-md-5 col-lg-4 text-md-end mt-4 mt-md-0">
+                    <div class="location-hud-badge font-mono">
+                        <i class="bi bi-geo-alt-fill text-emerald"></i> {{ profile.cv.personal_info.ciudad|upper }}, {{ profile.cv.personal_info.pais|upper }}
+                    </div>
+                    <div class="action-trigger-row mt-4 d-flex gap-4 justify-content-md-end">
+                        <a href="#projects" class="btn-premium-action primary">View Systems</a>
+                        <a href="#dossier" class="btn-premium-action secondary">Explore Dossier →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="metrics-bar" class="py-100 border-top-premium">
+            <div class="row g-4 justify-content-between text-center text-md-start">
+                <div class="col-6 col-md-3">
+                    <div class="hard-metric-num">5+</div>
+                    <div class="hard-metric-label font-mono">// AÑOS CONSTRUYENDO SISTEMAS</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="hard-metric-num">20+</div>
+                    <div class="hard-metric-label font-mono">// PROYECTOS DESARROLLADOS</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="hard-metric-num">15+</div>
+                    <div class="hard-metric-label font-mono">// TECNOLOGÍAS DOMINADAS</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="hard-metric-num">3</div>
+                    <div class="hard-metric-label font-mono">// ÁREAS DE ESPECIALIZACIÓN</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture" class="py-120 border-top-premium">
+            <div class="row mb-5">
+                <div class="col-12 col-lg-6">
+                    <span class="section-token font-mono">// SYSTEM_ARCHITECTURE_ENGINE</span>
+                    <h2 class="section-premium-title mt-2">Cómo estructuro sistemas de alta disponibilidad</h2>
+                </div>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-10">
+                    <div class="architecture-diagram-container p-5 text-center border-glow-target">
+                        <div class="diagram-grid-flow">
+                            <div class="diagram-node node-client">
+                                <div class="node-icon"><i class="bi bi-window"></i></div>
+                                <div class="node-info"><span class="node-title">Premium Frontend</span><span class="node-tech font-mono">Next.js / Vanilla ES6</span></div>
+                            </div>
+                            <div class="diagram-arrow font-mono">▼</div>
+                            <div class="diagram-node node-gateway">
+                                <div class="node-icon"><i class="bi bi-shield-lock"></i></div>
+                                <div class="node-info"><span class="node-title">API Gateway & Hardening</span><span class="node-tech font-mono">Go / Reverse Proxy TLS 1.3</span></div>
+                            </div>
+                            <div class="diagram-arrow font-mono">▼</div>
+                            <div class="d-flex flex-column flex-md-row justify-content-center gap-4 gap-md-5 my-3 align-items-center">
+                                <div class="diagram-node node-engine">
+                                    <div class="node-icon"><i class="bi bi-cpu"></i></div>
+                                    <div class="node-info"><span class="node-title">Neural AI Engine</span><span class="node-tech font-mono">Python / Vector Embeddings</span></div>
+                                </div>
+                                <div class="diagram-node node-security">
+                                    <div class="node-icon"><i class="bi bi-incognito"></i></div>
+                                    <div class="node-info"><span class="node-title">Security & Risk Engine</span><span class="node-tech font-mono">Java 21 / Spring Core</span></div>
+                                </div>
+                            </div>
+                            <div class="diagram-arrow font-mono">▼</div>
+                            <div class="diagram-node node-database">
+                                <div class="node-icon"><i class="bi bi-database"></i></div>
+                                <div class="node-info"><span class="node-title">Distributed Data Layer & Cloud</span><span class="node-tech font-mono">AWS / AZURE / Snowflake / PostgreSQL Secure</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-120 border-top-premium">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <span class="section-token font-mono">// TOP_TIER_COMPONENTS_SHELF</span>
+                    <h2 class="section-premium-title mt-2">Productos e Infraestructura Destacada</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                {% if profile.proyectos.exists %}
+                    {% for proj in profile.proyectos.all %}
+                    <div class="col-12 col-lg-4">
+                        <div class="premium-product-card p-4 border-glow-target h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="card-product-header d-flex justify-content-between align-items-center mb-3">
+                                    <span class="card-status-badge font-mono"><span class="dot-live"></span>PRODUCTION_READY</span>
+                                    {% if proj.link %}
+                                        <a href="{{ proj.link }}" target="_blank" style="color: inherit;"><i class="bi bi-arrow-up-right"></i></a>
+                                    {% endif %}
+                                </div>
+                                <h3 class="card-product-title">{{ proj.nombre|upper }}</h3>
+                                {% if proj.descripcion %}
+                                    <p class="card-product-desc mt-2">{{ proj.descripcion|truncatechars:120 }}</p>
+                                {% endif %}
+                            </div>
+                            <div class="card-product-footer mt-4">
+                                <div class="card-stack font-mono">{% if proj.tecnologias %}🛠 {{ proj.tecnologias }}{% endif %}</div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </section>
+
+        <section id="dossier" class="py-120 border-top-premium">
+            <span class="section-token font-mono mb-4 d-block">// DATA_DOSSIER_CORE</span>
+            <div class="row g-4 position-relative">
+                
+                <div class="col-12 col-lg-3 d-flex flex-column gap-2 dynamic-aside" id="leftAside">
+                    <div class="injector-panel active border-glow-target" data-file="personal_info">
+                        <span class="panel-num font-mono">01 //</span>
+                        <h3>PROFILE</h3>
+                    </div>
+                    <div class="injector-panel border-glow-target" data-file="experience">
+                        <span class="panel-num font-mono">02 //</span>
+                        <h3>EXPERIENCE</h3>
+                    </div>
+                    <div class="injector-panel border-glow-target" data-file="capabilities">
+                        <span class="panel-num font-mono">03 //</span>
+                        <h3>CAPABILITIES</h3>
+                    </div>
+                    <div class="injector-panel border-glow-target" data-file="education_metadata">
+                        <span class="panel-num font-mono">04 //</span>
+                        <h3>EDUCATION</h3>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-9 dynamic-editor-container" id="editorContainer">
+                    <div class="hud-ide-display h-100 d-flex flex-column border-glow-target" id="ideDisplay">
+                        <div class="ide-tabs d-flex align-items-center">
+                            <div class="ide-tab active" id="currentTabName">profile.json</div>
+                            <button class="skip-animation-btn font-mono" id="skipBtn">Skip Animation</button>
+                            <div class="ide-tab-space flex-grow-1"></div>
+                        </div>
+                        <div class="ide-core-layout d-flex flex-grow-1">
+                            <div class="ide-editor-area flex-grow-1 d-flex flex-column">
+                                <div class="ide-body flex-grow-1" id="ideOutput">
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contact" class="py-120 border-top-premium">
+            <div class="row mb-5">
+                <div class="col-12 col-lg-6">
+                    <span class="section-token font-mono">// ESTABLECER_SESION_TACTICA</span>
+                    <h2 class="section-premium-title mt-2">¿Preparado para auditar su infraestructura?</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-8">
+                    <div class="contact-luxury-frame p-5 text-center border-glow-target">
+                        <p class="font-sans text-muted m-0" style="font-size: 1.25rem; line-height: 1.6;">
+                            Canales de comunicación encriptados y listos para operaciones de alto impacto. 
+                            Use los accesos directos indexados en la consola inferior para iniciar un canal de auditoría directa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="runtime-footer" class="row py-5 border-top-premium">
+            <div class="col-12">
+                <div class="operational-terminal-footer p-4 font-mono border-glow-target">
+                    <div class="terminal-footer-header d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="live-node-pulse"></span>
+                            <span class="text-xs fw-bold text-white">Conecta conmigo</span>
+                        </div>
+                        <span class="text-xs text-muted" id="realtimeClock">TIME_SYNC: SYNCING...</span>
+                    </div>
+                    
+                    <div class="terminal-footer-grid row g-3 text-xs">
+                        <div class="col-12 col-md-6">
+                            <span class="text-muted d-block">------------------------------------------------------</span>
+                            <div class="d-flex gap-4 mt-2 internal-terminal-links">
+                                <a href="https://linkedin.com/in/fernando-silva" target="_blank" rel="noopener" class="term-link"><i class="bi bi-linkedin text-emerald"></i> LINKEDIN</a>
+                                <a href="https://github.com/nandosf" target="_blank" rel="noopener" class="term-link"><i class="bi bi-github"></i> GITHUB</a>
+                                <a href="mailto:fernando.silva@fsf.dev" class="term-link text-purple"><i class="bi bi-envelope-at-fill"></i> FERNANDO.SILVA@FSF.DEV</a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 text-md-end d-flex flex-column justify-content-between text-muted">
+                            <p class="copy-hud m-0" style="font-size: 0.75rem;">DESIGNED ACCORDING TO LINEAR V3 LUXURY DESIGN TOKENS.</p>
+                            <p class="copy-hud m-0" style="font-size: 0.75rem;">© 2026 FERNANDO DA SILVA FELIX // BARCELONA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <div id="django-raw-buffer" style="display: none !important;" aria-hidden="true">
+        
+        <div id="raw-personal-info">
+            {% with pi=profile.cv.personal_info %}
+            <div class="recruiter-header">
+                <h2 class="recruiter-name">{{ pi.nombre }} {{ pi.apellidos }}</h2>
+                <div class="recruiter-title">
+                    {% if profile.mostrar_perfil_profesional and profile.cv.professional_profile %}
+                        {{ profile.cv.professional_profile.profesion }}
+                    {% endif %}
+                </div>
+                <div class="recruiter-contact-grid">
+                    {% if pi.email_profesional1 %}<span><i class="bi bi-envelope-fill text-emerald"></i> {{ pi.email_profesional1 }}</span>{% endif %}
+                    {% if pi.email_profesional2 %}<span><i class="bi bi-envelope"></i> Alt: {{ pi.email_profesional2 }}</span>{% endif %}
+                    {% if pi.telefono1 %}<span><i class="bi bi-telephone-fill text-emerald"></i> {{ pi.telefono1 }}</span>{% endif %}
+                    {% if pi.telefono2 %}<span><i class="bi bi-telephone"></i> Alt: {{ pi.telefono2 }}</span>{% endif %}
+                    <span><i class="bi bi-geo-alt-fill text-emerald"></i> {{ pi.ciudad }}, {{ pi.pais }}</span>
+                </div>
+            </div>
+            <div class="cv-section-title">// Datos Personales e Identidad</div>
+            <p class="font-sans mb-3" style="font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.85);">
+                • <strong>Ubicación:</strong> {{ pi.ciudad }}{% if pi.codigo_postal %} (CP: {{ pi.codigo_postal }}){% endif %}, {{ pi.pais }}<br>
+                {% if pi.nacionalidad %}• <strong>Nacionalidad:</strong> {{ pi.nacionalidad }}<br>{% endif %}
+                • <strong>Disponibilidad:</strong> {{ pi.disponibilidad }}<br>
+                {% if pi.fecha_nacimiento %}• <strong>Fecha de Nacimiento:</strong> {{ pi.fecha_nacimiento }}<br>{% endif %}
+                {% if pi.carnet_conducir is not None %}
+                    • <strong>Permiso de Conducir:</strong> {% if pi.carnet_conducir %}Sí{% else %}No{% endif %}<br>
+                {% endif %}
+            </p>
+            {% if profile.mostrar_perfil_profesional and profile.cv.professional_profile %}
+                <div class="cv-section-title mt-4">// Perfil Profesional</div>
+                <p class="font-sans text-muted-custom" style="font-size: 1.15rem; color: rgba(255,255,255,0.75);">{{ profile.cv.professional_profile.resumen }}</p>
+                {% if profile.cv.professional_profile.objetivo %}
+                    <p class="font-sans text-muted-custom" style="font-size: 1.15rem;"><strong>Objetivo:</strong> {{ profile.cv.professional_profile.objetivo }}</p>
+                {% endif %}
+            {% endif %}
+            {% endwith %}
+        </div>
+
+        <div id="raw-experience">
+            {% if profile.experiencias.exists %}
+                <div class="cv-section-title">// Experiencia Profesional (Cronología Inversa)</div>
+                {% for exp in profile.experiencias.all %}
+                <div class="cv-entry">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h4 class="cv-entry-role" style="font-size: 1.25rem;">{{ exp.puesto }}</h4>
+                            <div class="cv-entry-company" style="font-size: 1.05rem;">{{ exp.empresa }}{% if exp.ubicacion %} · {{ exp.ubicacion }}{% endif %}</div>
+                        </div>
+                        <span class="cv-entry-period">{{ exp.periodo }}</span>
+                    </div>
+                    {% if exp.descripcion %}
+                        <p class="cv-entry-desc" style="font-size: 1.1rem;">{{ exp.descripcion|linebreaksbr }}</p>
+                    {% endif %}
+                    {% if exp.logros %}
+                        <ul class="cv-logros-list">
+                            {% for logro in exp.logros.splitlines %}
+                                {% if logro %}<li style="font-size: 1.05rem;">{{ logro }}</li>{% endif %}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div id="raw-capabilities">
+            {% if profile.habilidades.exists %}
+                <div class="cv-section-title">// Habilidades Técnicas (Hard Skills)</div>
+                {% for s in profile.habilidades.all %}
+                    {% if s.tipo == 'hard' %}
+                    <div class="quality-metric-item">
+                        <div class="metric-label-container" style="font-size: 1.1rem; font-weight: 500;">
+                            <span>{{ s.nombre }}</span>
+                            <span class="text-muted font-mono">Nivel: {{ s.nivel }}</span>
+                        </div>
+                        <div class="metric-track-bar" style="width: 100%; height: 6px; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden;">
+                            <div class="metric-fill-fluid" data-level="{{ s.nivel }}0%" style="width: {{ s.nivel }}0%; height: 100%; background: linear-gradient(90deg, var(--accent-2), var(--accent)); box-shadow: 0 0 20px var(--accent);"></div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+
+                <div class="cv-section-title mt-5">// Habilidades Blandas (Soft Skills)</div>
+                <div class="tag-cloud-container d-flex flex-wrap gap-2 mt-2">
+                    {% for s in profile.habilidades.all %}
+                        {% if s.tipo == 'soft' %}
+                            <span class="tag-hud-sm" style="font-size: 0.95rem; font-family: var(--font-mono); color: #fff; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 6px 14px; border-radius: 4px;">{{ s.nombre }}</span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% if profile.idiomas.exists %}
+                <div class="cv-section-title mt-5">// Competencia Lingüística (Idiomas)</div>
+                <p class="font-sans m-0 mt-2" style="font-size: 1.15rem; color: rgba(255,255,255,0.85); line-height: 1.8;">
+                    {% for lang in profile.idiomas.all %}
+                        • <strong>{{ lang.idioma }}:</strong> {{ lang.get_nivel_display }}{% if lang.certificacion %} · {{ lang.certificacion }}{% endif %}<br>
+                    {% endfor %}
+                </p>
+            {% endif %}
+        </div>
+
+        <div id="raw-education">
+            {% if profile.educaciones.exists %}
+                <div class="cv-section-title">// Formación Académica Reglada</div>
+                {% for edu in profile.educaciones.all %}
+                <div class="cv-entry">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h4 class="cv-entry-role" style="font-size: 1.25rem;">{{ edu.titulo }}</h4>
+                            <div class="cv-entry-company" style="font-size: 1.05rem;">{{ edu.centro }}{% if edu.ubicacion %} · {{ edu.ubicacion }}{% endif %}</div>
+                        </div>
+                        <span class="cv-entry-period">{{ edu.periodo }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+
+            {% if profile.formaciones.exists %}
+                <div class="cv-section-title mt-4">// Formación Complementaria & Certificaciones</div>
+                <ul class="cv-logros-list">
+                    {% for formacion in profile.formaciones.all %}
+                        <li style="font-size: 1.1rem;"><strong>{{ formacion.nombre }}</strong> — {{ formacion.get_tipo_display }}{% if formacion.entidad %} ({{ formacion.entidad }})  {% endif %}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+    </div>
+
+    <script src="{% static 'cv/js/script.js' %}"></script>
+</body>
+</html>
